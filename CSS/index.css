@@ -1,0 +1,157 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: hsl(0, 36%, 70%);
+    --red-error: hsl(0, 93%, 68%);
+    --heading-color: hsl(0, 6%, 24%);
+    --gradient-color1: hsl(0, 80%, 86%);
+    --gradient-color2: hsl(0, 74%, 74%);
+}
+
+html {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    color: var(--primary-color);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* style the main background */
+.bg-main {
+    background: url(../Resources/images/bg-pattern-desktop.svg) no repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 7.7%;
+    z-index: 1;
+}
+
+/* style the container */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 550px;
+}
+
+/* style the main content inside of the container */
+.container .main-content {
+    width: 55%;
+    margin: 60px auto;
+}
+
+.main-content .logo {
+    width: 140px;
+}
+
+.main-content h1 {
+    font-size: 55px;
+    letter-spacing: 12px;
+    font-weight: 600;
+    margin: 110px 0 25px;
+    color: var(--heading-color);
+}
+
+.main-content h1 span {
+    font-weight: 300;
+    color: var(--primary-color);
+}
+
+/* style the email input */
+.main-content .email-box {
+    border: 1px solid var(--primary-color);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    max-width: 400px;
+}
+
+.email-box .img-btn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 24%;
+    margin-left: 15px;
+    padding: 14px 35px;
+    border-radius: 40px;
+    /* background: linear-gradient(135deg, var(--gradient-color1) var(--gradient-color2)); */
+    box-shadow: 0 6px 12px var(--primary-color);
+    transition: 0.5s;
+}
+
+.email-box .img-btn:hover {
+    opacity: 0.6;
+}
+
+.email-box input {
+    width: 80%;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.email-box input::placeholder {
+    color: var(--primary-color);
+    opacity: 0.6;
+}
+
+.email-box .error-icon,
+.error-mes {
+    display: none;
+}
+
+.error-mes {
+    margin: 5px 0 0 20px;
+    font-weight: 400;
+    color: var(--red-error);
+}
+
+/* style the hero image */ 
+.container .hero-image {
+    background: url(../Resources/images/hero-desktop.jpg) no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+p {
+    line-height: 1.5;
+}
+
+/* Responsive to mobile */
+@media (max-width: 376px) {
+    html {
+        margin-top: 90px;
+    }
+    .container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .main-content {
+        width: 90% !important;
+        text-align: center;
+    }
+    .main-content .logo {
+        margin-left: -160px;
+    }
+    .main-content h1 {
+        margin-top: 900px;
+        font-size: 40px;
+    }
+    .hero-image {
+        position: absolute;
+        top: 5%;
+        background: url(../Resources/images/hero-mobile.jpg) no-repeat;
+    } 
+}
+    
